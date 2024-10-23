@@ -1,12 +1,27 @@
-// declaramos a funcao
-function calcularValorPedido(valorItens, taxaEntrega) {
-    let valorTotal = valorItens + taxaEntrega
-    // retorna o valor total que é a soma dos parametros
-    return valorTotal
+// categorizar as avaliacoes
+// exibir a mensagem da avaliacao
+
+function categorizarAvaliacao(nota) {
+    let nota;
+    switch (nota) {
+        case 1:
+            return "Muito ruim"
+        case 2:
+            return "Ruim"
+        case 3:
+            return "Médio"
+        case 4:
+            return "Bom"
+        case 5:
+            return "Excelente"
+        default:
+            return "Nota inválida"
+    }
 }
 
-// chamei minha funcao e armazenei o retorno dentro de uma variavel
-let valorTotalDoPedidoCalculado = calcularValorPedido(5000, 53894579827)
+function mostrarMensagemDaAvaliacao(nota) {
+    let categoria = categorizarAvaliacao(nota);
+    console.log(`Mensagem de avaliação do cliente: ${categoria}`)
+}
 
-// imprimi o valor da variavel
-console.log(`O valor total do pedido é de RS ${valorTotalDoPedidoCalculado}`)
+mostrarMensagemDaAvaliacao(4)
